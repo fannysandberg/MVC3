@@ -1,0 +1,19 @@
+﻿@model Mvc3.Models.PeopleEditVM
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Person</title>
+</head>
+<body>
+    <form asp-controller="People" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span><br /><br />
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span><br />
+        <input type="submit" value="Update Person" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@model Mvc3.Models.PeopleIndexVM[]
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Current People</h1>
+        @foreach (var person in Model)
+        {
+            <p>Name: <a asp-controller="People" asp-action="Edit" asp-route-id ="@person.Id">@person.Name</a>, E-mail: @person.Email</p>
+
+            @if (person.ShowAsHighLighted)
+            {
+                <span style="color:darkolivegreen">@person.Email</span>
+
+            }
+
+
+        }
+</body>
+</html>

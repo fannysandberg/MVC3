@@ -1,0 +1,22 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Mvc3.Models.PeopleCreateVM
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form asp-controller="People" asp-action="Create" method="post">
+        <label asp-for="Name"></label><br />
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span><br /><br />
+        <label asp-for="Email"></label><br />
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+        <input type="submit" value="Create new person" /><br/>
+        <label asp-for="BotCheck">Prove you're not a robot</label>
+        <input asp-for="BotCheck"/>
+        <span asp-validation-for="BotCheck"></span>
+    </form>
+</body>
+</html>
